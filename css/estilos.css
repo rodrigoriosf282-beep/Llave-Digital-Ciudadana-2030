@@ -1,0 +1,708 @@
+
+/* =========================================
+   LLAVE DIGITAL CIUDADANA 2030
+   Hoja de estilos principal
+   Proyecto académico - Aplicaciones Web
+========================================= */
+
+
+/* =========================================
+   1. VARIABLES GENERALES
+========================================= */
+
+:root {
+    --color-primario: #681b35;
+    --color-primario-oscuro: #461123;
+    --color-secundario: #274c66;
+
+    --color-fondo: #f5f7fa;
+    --color-blanco: #ffffff;
+    --color-texto: #243242;
+    --color-texto-secundario: #4b5868;
+    --color-borde: #d7dfe7;
+
+    --color-informacion: #e9f2fb;
+    --color-advertencia: #fff3d8;
+
+    --color-en-linea: #e9e8ff;
+    --color-presencial: #fff2ca;
+    --color-mixta: #ffe4e7;
+
+    --radio: 12px;
+    --sombra: 0 4px 18px rgba(20, 35, 55, 0.08);
+    --ancho-maximo: 1120px;
+}
+
+
+/* =========================================
+   2. CONFIGURACIÓN GLOBAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--color-texto);
+    background: var(--color-fondo);
+}
+
+.contenedor {
+    width: min(92%, var(--ancho-maximo));
+    margin-inline: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.3;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h2 {
+    font-size: clamp(1.55rem, 3vw, 2rem);
+    color: var(--color-primario);
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+h4 {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-top: 0;
+}
+
+a {
+    color: var(--color-primario);
+}
+
+a:hover {
+    text-decoration-thickness: 2px;
+}
+
+
+/* =========================================
+   3. ACCESIBILIDAD
+========================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+    outline: 3px solid #d38b24;
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   4. ENCABEZADO
+========================================= */
+
+.encabezado {
+    background: var(--color-blanco);
+    border-bottom: 1px solid var(--color-borde);
+    box-shadow: var(--sombra);
+}
+
+.encabezado .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding-block: 18px;
+}
+
+
+/* =========================================
+   5. LOGOTIPO
+========================================= */
+
+.marca {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    max-width: 100%;
+    text-decoration: none;
+}
+
+.logo-sitio {
+    display: block;
+    width: 290px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.marca:hover {
+    opacity: 0.92;
+}
+
+
+/* =========================================
+   6. MENÚ DE NAVEGACIÓN
+========================================= */
+
+.menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: var(--color-texto);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+    background: var(--color-informacion);
+    color: var(--color-primario);
+}
+
+
+/* =========================================
+   7. SECCIONES GENERALES
+========================================= */
+
+.seccion {
+    padding-block: 64px;
+}
+
+.seccion:nth-of-type(even) {
+    background: var(--color-blanco);
+}
+
+.seccion .contenedor > p {
+    max-width: 850px;
+}
+
+
+/* =========================================
+   8. PRESENTACIÓN PRINCIPAL
+========================================= */
+
+.inicio {
+    background: linear-gradient(
+        135deg,
+        var(--color-primario-oscuro),
+        var(--color-primario)
+    );
+
+    color: var(--color-blanco);
+    padding-block: 80px;
+}
+
+.inicio-contenido {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.1fr)
+        minmax(0, 1fr);
+    align-items: center;
+    gap: 24px;
+}
+
+.inicio-texto {
+    min-width: 0;
+}
+
+.inicio-texto h1 {
+    max-width: 800px;
+}
+
+.inicio-texto p {
+    max-width: 760px;
+}
+
+
+/* =========================================
+   9. ILUSTRACIÓN DE INICIO
+========================================= */
+
+.inicio-imagen {
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicio-imagen img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   10. BOTÓN PRINCIPAL
+========================================= */
+
+.boton {
+    display: inline-block;
+    padding: 13px 22px;
+    background: var(--color-blanco);
+    color: var(--color-primario-oscuro);
+    border: 2px solid transparent;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-block: 12px 24px;
+}
+
+.boton:hover {
+    background: #f3e9ed;
+}
+
+
+/* =========================================
+   11. AVISO ACADÉMICO
+========================================= */
+
+.aviso-academico {
+    padding: 16px 18px;
+    border-left: 5px solid #f3c36b;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.13);
+}
+
+
+/* =========================================
+   12. BUSCADOR Y FILTROS
+========================================= */
+
+.herramientas-busqueda {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 24px;
+    margin-block: 28px 20px;
+
+    background: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo label {
+    font-weight: 700;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 12px;
+
+    border: 1px solid #8794a3;
+    border-radius: 8px;
+
+    background: var(--color-blanco);
+    color: var(--color-texto);
+    font: inherit;
+}
+
+.campo input:focus,
+.campo select:focus {
+    border-color: var(--color-primario);
+}
+
+.campo input:disabled,
+.campo select:disabled {
+    background: #edf0f3;
+    color: #586474;
+    cursor: not-allowed;
+}
+
+#estado-tramites {
+    color: var(--color-texto-secundario);
+    font-weight: 600;
+}
+
+
+/* =========================================
+   13. TARJETAS DE TRÁMITES
+========================================= */
+
+.lista-tramites {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 24px;
+}
+
+.tarjeta-tramite {
+    padding: 24px;
+
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+
+    background: var(--color-blanco);
+    box-shadow: var(--sombra);
+}
+
+.tarjeta-tramite h3 {
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+.tarjeta-tramite h4 {
+    margin-top: 20px;
+    color: var(--color-texto);
+}
+
+.tarjeta-tramite p {
+    overflow-wrap: anywhere;
+}
+
+.tarjeta-tramite ul {
+    padding-left: 22px;
+    margin-bottom: 18px;
+}
+
+.tarjeta-tramite li {
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   14. ILUSTRACIONES DE LOS TRÁMITES
+========================================= */
+
+.imagen-tramite {
+    display: block;
+    width: 100%;
+    height: 170px;
+    object-fit: contain;
+    margin: 0 auto 20px;
+}
+
+
+/* =========================================
+   15. ETIQUETAS DE MODALIDAD
+========================================= */
+
+.etiqueta-modalidad {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* En línea */
+
+.categoria-en-linea {
+    background: var(--color-en-linea);
+    border-top: 5px solid #6559bb;
+}
+
+/* Presencial */
+
+.categoria-presencial {
+    background: var(--color-presencial);
+    border-top: 5px solid #a26d00;
+}
+
+/* Mixta */
+
+.categoria-mixta {
+    background: var(--color-mixta);
+    border-top: 5px solid #b83e55;
+}
+
+
+/* =========================================
+   16. ENLACES OFICIALES
+========================================= */
+
+.enlace-oficial {
+    display: inline-block;
+    margin-top: 12px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.enlace-oficial:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   17. NOTA INFORMATIVA
+========================================= */
+
+.nota-informativa {
+    margin-top: 32px;
+    padding: 22px 24px;
+
+    background: var(--color-informacion);
+    border-left: 5px solid var(--color-secundario);
+    border-radius: var(--radio);
+}
+
+.nota-informativa h3 {
+    color: var(--color-secundario);
+    margin-bottom: 12px;
+}
+
+.nota-informativa p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   18. PREGUNTAS FRECUENTES
+========================================= */
+
+#preguntas details {
+    max-width: 900px;
+    margin-bottom: 14px;
+    padding: 18px 22px;
+
+    background: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+
+#preguntas summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--color-primario);
+}
+
+#preguntas details p {
+    margin: 14px 0 0;
+}
+
+#preguntas details[open] {
+    border-color: var(--color-secundario);
+}
+
+
+/* =========================================
+   19. RECOMENDACIONES DE SEGURIDAD
+========================================= */
+
+.recomendacion {
+    max-width: 900px;
+    padding: 22px;
+    margin-bottom: 18px;
+
+    background: var(--color-informacion);
+    border-left: 5px solid var(--color-secundario);
+    border-radius: 10px;
+}
+
+.recomendacion h3 {
+    color: var(--color-secundario);
+    margin-bottom: 12px;
+}
+
+.recomendacion p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   20. PIE DE PÁGINA
+========================================= */
+
+.pie-pagina {
+    padding-block: 36px;
+
+    background: var(--color-primario-oscuro);
+    color: var(--color-blanco);
+    text-align: center;
+}
+
+.pie-pagina p {
+    margin-bottom: 6px;
+}
+
+
+/* =========================================
+   21. BOTÓN DE REINTENTO
+========================================= */
+
+.boton-reintentar {
+    display: inline-block;
+    padding: 12px 20px;
+
+    background: var(--color-primario);
+    color: var(--color-blanco);
+
+    border: 2px solid var(--color-primario);
+    border-radius: 9px;
+
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.boton-reintentar:hover {
+    background: var(--color-primario-oscuro);
+}
+
+
+/* =========================================
+   22. DISEÑO RESPONSIVO - TABLETAS
+========================================= */
+
+@media (max-width: 900px) {
+
+    .encabezado .contenedor {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .inicio-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .inicio-imagen {
+        max-width: 650px;
+        margin-inline: auto;
+    }
+
+    .lista-tramites {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================
+   23. DISEÑO RESPONSIVO - MÓVILES
+========================================= */
+
+@media (max-width: 650px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    .seccion {
+        padding-block: 42px;
+    }
+
+    .inicio {
+        padding-block: 56px;
+    }
+
+    .logo-sitio {
+        width: 230px;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .menu a {
+        display: block;
+    }
+
+    .inicio-contenido {
+        gap: 24px;
+    }
+
+    .inicio-imagen img {
+        border-radius: 12px;
+    }
+
+    .herramientas-busqueda {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    .lista-tramites {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta-tramite {
+        padding: 20px;
+    }
+
+    .imagen-tramite {
+        height: 150px;
+        margin-bottom: 16px;
+    }
+
+    .nota-informativa {
+        padding: 18px;
+    }
+
+    #preguntas details {
+        padding: 16px;
+    }
+
+    .recomendacion {
+        padding: 18px;
+    }
+
+}
+
+
+/* =========================================
+   24. PREFERENCIAS DE MOVIMIENTO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

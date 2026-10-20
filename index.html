@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Prototipo universitario de orientación ciudadana sobre Llave MX y trámites digitales."
+    >
+
+    <title>Llave Digital Ciudadana 2030 | Orientación ciudadana</title>
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <!-- Programación JavaScript -->
+    <script src="js/aplicacion.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =====================================
+         1. ENCABEZADO Y NAVEGACIÓN
+    ===================================== -->
+
+    <header class="encabezado">
+        <div class="contenedor">
+
+            <a
+                class="marca"
+                href="#inicio"
+                aria-label="Llave Digital Ciudadana 2030 - Ir al inicio"
+            >
+                <img
+                    src="imagenes/logo-llave-digital.png"
+                    alt="Llave Digital Ciudadana 2030. Orientación para tus trámites."
+                    class="logo-sitio"
+                    width="290"
+                >
+            </a>
+
+            <nav aria-label="Navegación principal">
+                <ul class="menu">
+
+                    <li>
+                        <a href="#inicio">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a href="#tramites">Trámites</a>
+                    </li>
+
+                    <li>
+                        <a href="#preguntas">Preguntas frecuentes</a>
+                    </li>
+
+                    <li>
+                        <a href="#seguridad">Seguridad digital</a>
+                    </li>
+
+                    <li>
+                        <a href="#acerca">Acerca de</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =====================================
+         CONTENIDO PRINCIPAL
+    ===================================== -->
+
+    <main>
+
+        <!-- =================================
+             2. SECCIÓN DE INICIO
+        ================================= -->
+
+        <section id="inicio" class="seccion inicio">
+
+            <div class="contenedor inicio-contenido">
+
+                <!-- Información principal -->
+                <div class="inicio-texto">
+
+                    <h1>
+                        Orientación sencilla para tus trámites digitales
+                    </h1>
+
+                    <p>
+                        Bienvenido a Llave Digital Ciudadana 2030,
+                        un prototipo universitario diseñado para
+                        facilitar la consulta de información sobre
+                        trámites gubernamentales, sus requisitos
+                        y modalidades de atención.
+                    </p>
+
+                    <p>
+                        Aquí encontrarás información organizada,
+                        preguntas frecuentes y recomendaciones
+                        para utilizar servicios digitales
+                        de forma segura.
+                    </p>
+
+                    <a class="boton" href="#tramites">
+                        Consultar trámites
+                    </a>
+
+                    <p class="aviso-academico">
+                        Este sitio es un proyecto académico
+                        de orientación ciudadana.
+                        No pertenece al Gobierno de México,
+                        no realiza trámites oficiales ni solicita
+                        credenciales de Llave MX.
+                    </p>
+
+                </div>
+
+                <!-- Ilustración de orientación digital -->
+                <div class="inicio-imagen">
+
+                    <img
+                        src="imagenes/ilustracion-inicio.png"
+                        alt="Ilustración de una persona utilizando una computadora para consultar información sobre trámites digitales."
+                        width="1792"
+                        height="1024"
+                        loading="eager"
+                        decoding="async"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             3. CONSULTA DE TRÁMITES
+        ================================= -->
+
+        <section id="tramites" class="seccion">
+
+            <div class="contenedor">
+
+                <h2>
+                    Consulta de trámites gubernamentales
+                </h2>
+
+                <p>
+                    Explora información general sobre tres
+                    trámites gubernamentales y conoce sus
+                    requisitos básicos, modalidades de
+                    atención y enlaces oficiales.
+                </p>
+
+                <!-- Herramientas de búsqueda -->
+                <div class="herramientas-busqueda">
+
+                    <div class="campo">
+
+                        <label for="buscar-tramite">
+                            Buscar trámite
+                        </label>
+
+                        <input
+                            type="search"
+                            id="buscar-tramite"
+                            placeholder="Ejemplo: pasaporte"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label for="filtro-modalidad">
+                            Modalidad de atención
+                        </label>
+
+                        <select id="filtro-modalidad">
+
+                            <option value="todos">
+                                Todas las modalidades
+                            </option>
+
+                            <option value="en-linea">
+                                En línea
+                            </option>
+
+                            <option value="presencial">
+                                Presencial
+                            </option>
+
+                            <option value="mixta">
+                                Mixta
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <!-- Mensaje de resultados -->
+                <p
+                    id="estado-tramites"
+                    role="status"
+                    aria-live="polite"
+                    aria-atomic="true"
+                >
+                    Los trámites se mostrarán en esta sección.
+                </p>
+
+                <!-- Tarjetas generadas desde XML -->
+                <div
+                    id="lista-tramites"
+                    class="lista-tramites"
+                ></div>
+
+
+                <!-- Nota informativa -->
+                <aside
+                    class="nota-informativa"
+                    aria-label="Aviso sobre requisitos oficiales"
+                >
+
+                    <h3>
+                        Importante: verifica los requisitos oficiales
+                    </h3>
+
+                    <p>
+                        La información presentada tiene fines
+                        académicos y orientativos. Los requisitos,
+                        costos, horarios y procedimientos pueden cambiar.
+                    </p>
+
+                    <p>
+                        Antes de realizar cualquier trámite, consulta
+                        directamente el sitio oficial de la institución
+                        correspondiente.
+                    </p>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             4. PREGUNTAS FRECUENTES
+        ================================= -->
+
+        <section id="preguntas" class="seccion">
+
+            <div class="contenedor">
+
+                <h2>
+                    Preguntas frecuentes
+                </h2>
+
+                <p>
+                    Encuentra respuestas a dudas comunes
+                    sobre Llave MX, el funcionamiento de
+                    este portal y la seguridad digital.
+                </p>
+
+                <!-- Pregunta 1 -->
+                <details>
+
+                    <summary>
+                        ¿Qué es Llave MX?
+                    </summary>
+
+                    <p>
+                        Es un mecanismo de autenticación digital
+                        que permite acceder a trámites y servicios
+                        de instituciones públicas participantes.
+                    </p>
+
+                </details>
+
+                <!-- Pregunta 2 -->
+                <details>
+
+                    <summary>
+                        ¿Necesito una cuenta para consultar este portal?
+                    </summary>
+
+                    <p>
+                        No. Puedes consultar toda la información
+                        de este prototipo universitario sin
+                        registrarte ni proporcionar datos personales.
+                    </p>
+
+                </details>
+
+                <!-- Pregunta 3 -->
+                <details>
+
+                    <summary>
+                        ¿Puedo realizar trámites oficiales desde este sitio?
+                    </summary>
+
+                    <p>
+                        No. Este portal únicamente proporciona
+                        información orientativa. Para realizar
+                        trámites debes utilizar los enlaces
+                        de las instituciones oficiales.
+                    </p>
+
+                </details>
+
+                <!-- Pregunta 4 -->
+                <details>
+
+                    <summary>
+                        ¿Qué hago si tengo problemas para utilizar Llave MX?
+                    </summary>
+
+                    <p>
+                        Consulta las opciones de ayuda y recuperación
+                        de acceso disponibles en los canales oficiales
+                        de Llave MX. Evita compartir tus contraseñas
+                        o códigos de verificación con terceros.
+                    </p>
+
+                </details>
+
+                <!-- Pregunta 5 -->
+                <details>
+
+                    <summary>
+                        ¿Cómo puedo identificar un sitio gubernamental oficial?
+                    </summary>
+
+                    <p>
+                        Comprueba la dirección del sitio, verifica
+                        que corresponda a la institución responsable
+                        y evita ingresar información personal
+                        mediante enlaces sospechosos.
+                    </p>
+
+                </details>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             5. SEGURIDAD DIGITAL
+        ================================= -->
+
+        <section id="seguridad" class="seccion">
+
+            <div class="contenedor">
+
+                <h2>
+                    Recomendaciones de seguridad digital
+                </h2>
+
+                <p>
+                    Proteger tu información personal es importante
+                    al utilizar plataformas y servicios digitales.
+                    Considera las siguientes recomendaciones.
+                </p>
+
+                <!-- Recomendación 1 -->
+                <article class="recomendacion">
+
+                    <h3>
+                        1. Protege tus credenciales
+                    </h3>
+
+                    <p>
+                        No compartas contraseñas ni códigos
+                        de verificación. Utiliza únicamente
+                        los canales oficiales para acceder
+                        a tus cuentas digitales.
+                    </p>
+
+                </article>
+
+                <!-- Recomendación 2 -->
+                <article class="recomendacion">
+
+                    <h3>
+                        2. Verifica los enlaces antes de realizar un trámite
+                    </h3>
+
+                    <p>
+                        Comprueba que estés utilizando la página
+                        oficial de la institución correspondiente
+                        y evita abrir enlaces de procedencia desconocida.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             6. ACERCA DEL PROYECTO
+        ================================= -->
+
+        <section id="acerca" class="seccion">
+
+            <div class="contenedor">
+
+                <h2>
+                    Acerca del proyecto
+                </h2>
+
+                <p>
+                    Llave Digital Ciudadana 2030 es un prototipo
+                    desarrollado con fines académicos para la
+                    asignatura Aplicaciones Web de la
+                    Universidad Nacional Rosario Castellanos.
+                </p>
+
+                <p>
+                    Su propósito es facilitar la comprensión
+                    de información pública sobre trámites
+                    digitales, mediante tecnologías como
+                    HTML, CSS, JavaScript y XML.
+                </p>
+
+                <p>
+                    El proyecto recupera conocimientos relacionados
+                    con la arquitectura web, programación,
+                    organización de contenidos y estructuración
+                    de información, desarrollados durante
+                    los cuatro módulos de la asignatura.
+                </p>
+
+                <p>
+                    El prototipo no realiza operaciones
+                    gubernamentales, no almacena datos personales
+                    ni requiere autenticación ciudadana.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================
+         7. PIE DE PÁGINA
+    ===================================== -->
+
+    <footer class="pie-pagina">
+
+        <div class="contenedor">
+
+            <p>
+                Llave Digital Ciudadana 2030 |
+                Proyecto universitario
+            </p>
+
+            <p>
+                Aplicaciones Web —
+                Universidad Nacional Rosario Castellanos
+            </p>
+
+            <p>
+                Prototipo académico no oficial.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

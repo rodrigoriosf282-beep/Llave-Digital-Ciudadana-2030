@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    LLAVE DIGITAL CIUDADANA 2030
+    Archivo de información sobre trámites.
+    Proyecto académico - Aplicaciones Web
+-->
+
+<registros>
+
+    <!-- Trámite 1: En línea -->
+    <registro id="R001">
+        <nombre>Constancia de Antecedentes Penales Federales</nombre>
+
+        <descripcion>
+            Documento oficial que informa sobre la existencia
+            o inexistencia de antecedentes penales federales
+            de una persona. Su solicitud se realiza mediante
+            la plataforma electrónica correspondiente.
+        </descripcion>
+
+        <categoria>En línea</categoria>
+
+        <institucion>
+            Prevención y Reinserción Social
+        </institucion>
+
+        <requisitos>
+            <requisito>
+                Clave Única de Registro de Población (CURP) vigente.
+            </requisito>
+            <requisito>
+                Correo electrónico para recibir notificaciones.
+            </requisito>
+            <requisito>
+                Información solicitada para verificar la identidad.
+            </requisito>
+            <requisito>
+                Acta de nacimiento e identificación oficial,
+                cuando el sistema requiera documentos adicionales.
+            </requisito>
+            <requisito>
+                Pago de derechos cuando corresponda.
+            </requisito>
+        </requisitos>
+
+        <modalidad>
+            Trámite disponible en línea mediante el portal
+            oficial de Constancias de Antecedentes Penales Federales.
+        </modalidad>
+
+        <enlaceOficial>https://constancias.oadprs.gob.mx/</enlaceOficial>
+
+        <fuente>
+            Órgano Administrativo Desconcentrado
+            Prevención y Reinserción Social.
+        </fuente>
+    </registro>
+
+    <!-- Trámite 2: Presencial -->
+    <registro id="R002">
+        <nombre>Corrección de datos personales ante el IMSS</nombre>
+
+        <descripcion>
+            Procedimiento para solicitar la corrección
+            o regularización de información personal
+            registrada ante el Instituto Mexicano
+            del Seguro Social, como nombre, fecha de nacimiento,
+            CURP o Número de Seguridad Social.
+        </descripcion>
+
+        <categoria>Presencial</categoria>
+
+        <institucion>
+            Instituto Mexicano del Seguro Social (IMSS)
+        </institucion>
+
+        <requisitos>
+            <requisito>
+                Acta de nacimiento.
+            </requisito>
+            <requisito>
+                Identificación oficial vigente.
+            </requisito>
+            <requisito>
+                Clave Única de Registro de Población (CURP).
+            </requisito>
+            <requisito>
+                Comprobante de domicilio.
+            </requisito>
+            <requisito>
+                Documento que contenga el Número
+                de Seguridad Social (NSS).
+            </requisito>
+            <requisito>
+                Solicitud de regularización o corrección
+                de datos personales del asegurado.
+            </requisito>
+        </requisitos>
+
+        <modalidad>
+            Atención presencial en una Subdelegación del IMSS.
+            La institución también dispone de una alternativa
+            para realizar este trámite en línea.
+        </modalidad>
+
+        <enlaceOficial>https://www.imss.gob.mx/tramites/imss02012</enlaceOficial>
+
+        <fuente>
+            Instituto Mexicano del Seguro Social.
+        </fuente>
+    </registro>
+
+    <!-- Trámite 3: Mixta, clasificación académica -->
+    <registro id="R003">
+        <nombre>Expedición del pasaporte mexicano por primera vez</nombre>
+
+        <descripcion>
+            Trámite para obtener por primera vez el pasaporte
+            mexicano, documento oficial de viaje e identidad.
+            Este registro se refiere a personas mayores de edad.
+        </descripcion>
+
+        <categoria>Mixta</categoria>
+
+        <institucion>
+            Secretaría de Relaciones Exteriores (SRE)
+        </institucion>
+
+        <requisitos>
+            <requisito>
+                Programar una cita mediante los canales
+                oficiales autorizados.
+            </requisito>
+            <requisito>
+                Presentarse personalmente a la cita.
+            </requisito>
+            <requisito>
+                Acreditar identidad y nacionalidad mexicana
+                conforme a los requisitos vigentes de la SRE.
+            </requisito>
+            <requisito>
+                Cubrir los derechos correspondientes
+                a la expedición del pasaporte.
+            </requisito>
+        </requisitos>
+
+        <modalidad>
+            Clasificación académica mixta: la cita puede
+            gestionarse por medios digitales, pero la
+            expedición requiere atención presencial.
+            La SRE clasifica oficialmente el trámite
+            como presencial.
+        </modalidad>
+
+        <enlaceOficial>https://www.gob.mx/tramites/ficha/pasaporte-ordinario-para-personas-mayores-de-edad/SRE112</enlaceOficial>
+
+        <fuente>
+            Secretaría de Relaciones Exteriores.
+        </fuente>
+    </registro>
+
+</registros>
